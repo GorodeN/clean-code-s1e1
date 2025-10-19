@@ -17,7 +17,7 @@
 }
 
 .header .details {
-  font-family: fantasy, cursive;
+  font-family: "Comic Sans MS", fantasy, cursive;
 }
 
 @media (max-width: 768px) {
