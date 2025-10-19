@@ -9,7 +9,7 @@
 // Event handling, user interaction is what starts the code execution.
 
 var taskInput=document.getElementById("new-task");//Add a new task.
-var addButton=document.getElementsByTagName("button")[0];//first button
+var form = document.getElementById("add-task-form");//Add new task form
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incomplete-tasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
@@ -44,9 +44,11 @@ var createNewTaskElement=function(taskString){
   editInput.className="task";
 
   editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
+  editButton.type = "button";
   editButton.className="button edit";
 
   deleteButton.className="button delete";
+  deleteButton.type = "button";
   deleteButtonImg.src='./remove.svg';
   deleteButtonImg.className = "remove-img";
   deleteButton.appendChild(deleteButtonImg);
@@ -150,10 +152,12 @@ var ajaxRequest=function(){
 //The glue to hold it all together.
 
 
-//Set the click handler to the addTask function.
-addButton.onclick=addTask;
-addButton.addEventListener("click",addTask);
-addButton.addEventListener("click",ajaxRequest);
+//Set the form submit event listener.
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  addTask();
+  ajaxRequest();
+});
 
 
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
