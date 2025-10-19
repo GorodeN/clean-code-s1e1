@@ -27,7 +27,8 @@
   width: 500px;
   margin: 0 auto 0;
 }
-.task, .task-label {
+.task,
+.task-label {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
@@ -39,10 +40,12 @@
   margin: 0;
   padding: 0px;
 }
-.list-item, .section-title {
+.list-item,
+.section-title {
   list-style: none;
 }
-input,button{
+input,
+button {
   outline: none;
 }
 .button {
@@ -98,7 +101,6 @@ input,button{
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
